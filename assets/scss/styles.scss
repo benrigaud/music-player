@@ -1,0 +1,216 @@
+/*--------------------------------------------------------------
+## COLORS
+--------------------------------------------------------------*/
+$white: #EBF4FF;
+$black: #1A1A2E;
+$gray: #D0DCEC;
+$blue-light: #85BDFF;
+$blue: #0F3460;
+$shadow: 2px 4px 24px #5aa6ff4d;
+
+html{
+    background-color: $black;
+    font-family: 'Poppins', sans-serif;
+}
+
+button, a{
+    &:focus{
+        outline: none;
+    }
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    margin: 0;
+    >p{
+        margin: 20px 0 0;
+        color: $white;
+        font-size: 12px;
+        color: $blue-light;
+        a{
+            color: $blue-light;
+            text-decoration: none;
+            transition: all .3s;
+            &:hover{
+                color: $white;
+            }
+        }
+    }
+    .player{
+        background-color: $white;
+        box-shadow: $shadow;
+        padding: 20px 40px;
+        border-radius: 20px;
+        width: 100%;
+        max-width: max-content;
+        h2{
+            margin: 0;
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: $blue;
+        }
+        .song{
+            margin-bottom: 20px;
+            .song-cover{
+                width: 240px;
+                height: 240px;
+                position: relative;
+                margin-bottom: 20px;
+                img{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 20px;
+                    object-fit: cover;
+                    object-position: top center;
+                    &.cover-shadow{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        filter: blur(16px);
+                        opacity: .75;
+                    }
+                    &.cover{
+                        position: relative;
+                    }
+                }
+            }
+            .name{
+                margin: 0;
+                font-size: 20px;
+                text-align: center;
+                font-weight: 700;
+                line-height: 1;
+                color: $blue;
+                max-width: 240px;
+                min-height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .artist{
+                margin: 0;
+                color: $blue-light;
+                max-width: 240px;
+                text-align: center;
+                font-size: 14px;
+            }
+        }
+        .nav{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            button{
+                display: block;
+                border: none;
+                color: $black;
+                background-color: transparent;
+                padding: 0;
+                line-height: 1;
+                font-size: 30px;
+                cursor: pointer;
+                transition: all .4s;
+                &.play-pause{
+                    font-size: 50px;
+                    margin: 0 20px;
+                }
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
+        }
+        .tracklist{
+            margin: 0 -20px;
+            h3{
+                margin: 0 0 10px;
+                font-size: 12px;
+                color: $blue;
+            }
+            .tracks{
+                height: 150px;
+                overflow-y: scroll;
+                &::-webkit-scrollbar{
+                    width: 6px;
+                }
+                &::-webkit-scrollbar-track{
+                    background-color: $gray;
+                    border-radius: 3px;
+                }
+                &::-webkit-scrollbar-thumb{
+                    background-color: $blue-light;
+                    border-radius: 3px;
+                }
+                .track{
+                    display: block;
+                    padding: 10px 0;
+                    width: 100%;
+                    border: none;
+                    background-color: transparent;
+                    text-align: left;
+                    border-bottom: 1px solid $gray;
+                    color: $blue;
+                    font-size: 16px;
+                    transition: all .3s;
+                    cursor: pointer;
+                    span{
+                        display: block;
+                        color: $blue-light;
+                        font-size: 12px;
+                    }
+                    &:last-child{
+                        border-bottom: none;
+                    }
+                    &.active{
+                        font-weight: 700;
+                        span{
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
+        @media screen and ( min-width: 992px ) {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 648px;
+            justify-content: space-between;
+            padding-bottom: 40px;
+            h2{
+                width: 100%;
+                text-align: left;
+                padding-left: 20px;
+            }
+            .song{
+                margin-bottom: 0;
+                flex: 1;
+                max-width: 300px;
+                .song-cover{
+                    width: 260px;
+                }
+            }
+            .nav{
+                width: 100%;
+                order: 4;
+                margin-bottom: 0;
+            }
+            .tracklist{
+                flex: 1;
+                margin: 0;
+                .tracks{
+                    width: 100%;
+                    height: 260px;
+                    .jspContainer{
+                        width: unset;
+                    }
+                }
+            }
+        }
+    }
+}
