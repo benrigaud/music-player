@@ -11,18 +11,25 @@ button:focus, a:focus {
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  flex-direction: column;
+  padding: 20px;
   margin: 0;
+}
+@media screen and (min-width: 992px) {
+  body {
+    min-height: 100vh;
+    display: flex;
+    padding: 0;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 body > p {
   margin: 20px 0 0;
   color: #EBF4FF;
   font-size: 12px;
   color: #85BDFF;
+  text-align: center;
 }
 body > p a {
   color: #85BDFF;
@@ -33,18 +40,20 @@ body > p a:hover {
   color: #EBF4FF;
 }
 body .player {
+  margin: 0 auto;
   background-color: #EBF4FF;
   box-shadow: 2px 4px 24px #5aa6ff4d;
   padding: 20px 40px;
   border-radius: 20px;
   width: 100%;
-  max-width: max-content;
+  max-width: 400px;
+  box-sizing: border-box;
 }
 body .player h2 {
   margin: 0;
   text-align: center;
   font-size: 16px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   color: #0F3460;
 }
 body .player .song {
@@ -74,7 +83,7 @@ body .player .song .song-cover img.cover {
   position: relative;
 }
 body .player .song .name {
-  margin: 0;
+  margin: 0 auto;
   font-size: 18px;
   text-align: center;
   font-weight: 700;
@@ -87,7 +96,7 @@ body .player .song .name {
   justify-content: center;
 }
 body .player .song .artist {
-  margin: 0;
+  margin: 0 auto;
   color: #85BDFF;
   max-width: 160px;
   text-align: center;
@@ -118,7 +127,7 @@ body .player .nav button:hover {
   transform: scale(1.1);
 }
 body .player .tracklist {
-  margin: 0 -20px;
+  margin: 0;
 }
 body .player .tracklist h3 {
   margin: 0 0 10px;
@@ -126,7 +135,7 @@ body .player .tracklist h3 {
   color: #0F3460;
 }
 body .player .tracklist .tracks {
-  height: 100px;
+  height: 120px;
   overflow-y: scroll;
 }
 body .player .tracklist .tracks::-webkit-scrollbar {
