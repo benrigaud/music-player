@@ -11,7 +11,7 @@ button:focus, a:focus {
 }
 
 body {
-  padding: 20px;
+  padding: 40px 20px 20px;
   margin: 0;
 }
 @media screen and (min-width: 992px) {
@@ -25,7 +25,7 @@ body {
   }
 }
 body > p {
-  margin: 20px 0 0;
+  margin: 10px 0 0;
   color: #EBF4FF;
   font-size: 12px;
   color: #85BDFF;
@@ -53,7 +53,6 @@ body .player h2 {
   margin: 0;
   text-align: center;
   font-size: 16px;
-  margin-bottom: 20px;
   color: #0F3460;
 }
 body .player .song {
@@ -63,18 +62,20 @@ body .player .song .song-cover {
   width: 160px;
   position: relative;
   margin: 0 auto;
+  border-radius: 20px;
+  padding: 20px 0;
 }
 body .player .song .song-cover img {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 160px;
+  height: 160px;
   border-radius: 20px;
   object-fit: cover;
   object-position: top center;
 }
 body .player .song .song-cover img.cover-shadow {
   position: absolute;
-  top: 0;
+  top: 20px;
   left: 0;
   filter: blur(16px);
   opacity: 0.75;
