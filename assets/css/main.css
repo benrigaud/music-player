@@ -2,8 +2,13 @@
 ## COLORS
 --------------------------------------------------------------*/
 html {
-  background-color: #1A1A2E;
+  background-color: #EBF4FF;
   font-family: "Poppins", sans-serif;
+}
+@media screen and (min-width: 992px) {
+  html {
+    background-color: #1A1A2E;
+  }
 }
 
 button:focus, a:focus {
@@ -155,21 +160,6 @@ body .player .tracklist h3 {
   margin: 0 0 10px;
   font-size: 12px;
   color: #0F3460;
-}
-body .player .tracklist .tracks {
-  height: 200px;
-  overflow-y: scroll;
-}
-body .player .tracklist .tracks::-webkit-scrollbar {
-  width: 6px;
-}
-body .player .tracklist .tracks::-webkit-scrollbar-track {
-  background-color: #D0DCEC;
-  border-radius: 3px;
-}
-body .player .tracklist .tracks::-webkit-scrollbar-thumb {
-  background-color: #85BDFF;
-  border-radius: 3px;
 }
 body .player .tracklist .tracks .track {
   display: block;

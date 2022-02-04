@@ -9,8 +9,11 @@ $blue: #0F3460;
 $shadow: 2px 4px 24px #5aa6ff4d;
 
 html{
-    background-color: $black;
+    background-color: $white;
     font-family: 'Poppins', sans-serif;
+    @media screen and ( min-width:992px ){
+        background-color: $black;
+    }
 }
 
 button, a{
@@ -163,19 +166,6 @@ body{
                 color: $blue;
             }
             .tracks{
-                height: 200px;
-                overflow-y: scroll;
-                &::-webkit-scrollbar{
-                    width: 6px;
-                }
-                &::-webkit-scrollbar-track{
-                    background-color: $gray;
-                    border-radius: 3px;
-                }
-                &::-webkit-scrollbar-thumb{
-                    background-color: $blue-light;
-                    border-radius: 3px;
-                }
                 .track{
                     display: block;
                     padding: 20px 0;
