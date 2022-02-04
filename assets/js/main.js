@@ -2,22 +2,22 @@
 const audio = document.querySelector('.song audio')
 const allTracks = document.querySelectorAll('.track')
 const tracklistLength = allTracks.length
-const buttonPlay = document.querySelector('.play-pause')
-const buttonNext = document.querySelector('.next')
-const buttonPrev = document.querySelector('.prev')
-const buttonPlayIcon = document.querySelector('.play-pause i')
+const buttonPlay = document.querySelectorAll('.play-pause')
+const buttonNext = document.querySelectorAll('.next')
+const buttonPrev = document.querySelectorAll('.prev')
+const buttonPlayIcon = document.querySelectorAll('.play-pause i')
 
 const playButtonHandler = (e) => {
     e.preventDefault()
     
     if ( audio.paused ) {
         audio.play()
-        buttonPlayIcon.classList.remove('fa-play')
-        buttonPlayIcon.classList.add('fa-pause')
+        buttonPlayIcon.forEach(btn => btn.classList.remove('fa-play'))
+        buttonPlayIcon.forEach(btn => btn.classList.add('fa-pause'))
     } else {
         audio.pause()
-        buttonPlayIcon.classList.add('fa-play')
-        buttonPlayIcon.classList.remove('fa-pause')
+        buttonPlayIcon.forEach(btn => btn.classList.add('fa-play'))
+        buttonPlayIcon.forEach(btn => btn.classList.remove('fa-pause'))
     }
 }
 
@@ -52,12 +52,12 @@ const prevHandler = (e) => {
 const playThis = (id) => {
     // get song elements
     const song = document.querySelector('.song')
-    let songName = song.querySelector('.name')
-    let artistName = song.querySelector('.artist')
-    let songCover = song.querySelector('.cover')
-    let songCoverShadow = song.querySelector('.cover-shadow')
-    let songSource = song.querySelector('audio source')
-    const theCover = song.querySelector('.song-cover')
+    let songName = document.querySelector('.name')
+    let artistName = document.querySelector('.artist')
+    let songCover = document.querySelector('.cover')
+    let songCoverShadow = document.querySelector('.cover-shadow')
+    let songSource = document.querySelector('audio source')
+    const theCover = document.querySelector('.song-cover')
 
     // get track values
     const nextTrack = document.querySelector(`[songId="${id}"]`)
@@ -77,8 +77,8 @@ const playThis = (id) => {
 
     audio.load()
     audio.play()
-    buttonPlayIcon.classList.remove('fa-play')
-    buttonPlayIcon.classList.add('fa-pause')
+    buttonPlayIcon.forEach(btn => btn.classList.remove('fa-play'))
+    buttonPlayIcon.forEach(btn => btn.classList.add('fa-pause'))
     allTracks.forEach(e => e.classList.remove('active'))
     allTracks.forEach(e => {
         if(e.getAttribute('songId') === nextTrackId) {
@@ -87,7 +87,7 @@ const playThis = (id) => {
     })
 }
 
-buttonPlay.addEventListener('click', playButtonHandler)
-buttonNext.addEventListener('click', nextHandler)
-buttonPrev.addEventListener('click', prevHandler)
+buttonPlay.forEach(btn => btn.addEventListener('click', playButtonHandler))
+buttonNext.forEach(btn => btn.addEventListener('click', nextHandler))
+buttonPrev.forEach(btn => btn.addEventListener('click', prevHandler))
 allTracks.forEach(track => track.addEventListener('click', tracklistHandler))
