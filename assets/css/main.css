@@ -44,17 +44,16 @@ body .player h2 {
   margin: 0;
   text-align: center;
   font-size: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: #0F3460;
 }
 body .player .song {
   margin-bottom: 20px;
 }
 body .player .song .song-cover {
-  width: 240px;
-  height: 240px;
+  width: 160px;
   position: relative;
-  margin-bottom: 20px;
+  margin: 0 auto;
 }
 body .player .song .song-cover img {
   display: block;
@@ -76,12 +75,12 @@ body .player .song .song-cover img.cover {
 }
 body .player .song .name {
   margin: 0;
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
   font-weight: 700;
   line-height: 1;
   color: #0F3460;
-  max-width: 240px;
+  max-width: 160px;
   min-height: 40px;
   display: flex;
   align-items: center;
@@ -90,7 +89,7 @@ body .player .song .name {
 body .player .song .artist {
   margin: 0;
   color: #85BDFF;
-  max-width: 240px;
+  max-width: 160px;
   text-align: center;
   font-size: 14px;
 }
@@ -127,7 +126,7 @@ body .player .tracklist h3 {
   color: #0F3460;
 }
 body .player .tracklist .tracks {
-  height: 150px;
+  height: 100px;
   overflow-y: scroll;
 }
 body .player .tracklist .tracks::-webkit-scrollbar {
@@ -181,6 +180,8 @@ body .player .tracklist .tracks .track.active span {
     width: 100%;
     text-align: left;
     padding-left: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
   }
   body .player .song {
     margin-bottom: 0;
@@ -189,6 +190,14 @@ body .player .tracklist .tracks .track.active span {
   }
   body .player .song .song-cover {
     width: 260px;
+    margin: 0 0 20px;
+  }
+  body .player .song .name {
+    font-size: 18px;
+    max-width: 260px;
+  }
+  body .player .song .artist {
+    max-width: 260px;
   }
   body .player .nav {
     width: 100%;

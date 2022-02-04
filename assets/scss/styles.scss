@@ -51,16 +51,15 @@ body{
             margin: 0;
             text-align: center;
             font-size: 16px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             color: $blue;
         }
         .song{
             margin-bottom: 20px;
             .song-cover{
-                width: 240px;
-                height: 240px;
+                width: 160px;
                 position: relative;
-                margin-bottom: 20px;
+                margin: 0 auto;
                 img{
                     display: block;
                     width: 100%;
@@ -82,12 +81,12 @@ body{
             }
             .name{
                 margin: 0;
-                font-size: 20px;
+                font-size: 18px;
                 text-align: center;
                 font-weight: 700;
                 line-height: 1;
                 color: $blue;
-                max-width: 240px;
+                max-width: 160px;
                 min-height: 40px;
                 display: flex;
                 align-items: center;
@@ -96,7 +95,7 @@ body{
             .artist{
                 margin: 0;
                 color: $blue-light;
-                max-width: 240px;
+                max-width: 160px;
                 text-align: center;
                 font-size: 14px;
             }
@@ -133,7 +132,7 @@ body{
                 color: $blue;
             }
             .tracks{
-                height: 150px;
+                height: 100px;
                 overflow-y: scroll;
                 &::-webkit-scrollbar{
                     width: 6px;
@@ -186,6 +185,8 @@ body{
                 width: 100%;
                 text-align: left;
                 padding-left: 20px;
+                margin-bottom: 20px;
+                font-size: 20px;
             }
             .song{
                 margin-bottom: 0;
@@ -193,6 +194,14 @@ body{
                 max-width: 300px;
                 .song-cover{
                     width: 260px;
+                    margin: 0 0 20px;
+                }
+                .name{
+                    font-size: 18px;
+                    max-width: 260px;
+                }
+                .artist{
+                    max-width: 260px;
                 }
             }
             .nav{
