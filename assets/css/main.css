@@ -194,7 +194,12 @@ body .player .progress {
   align-items: center;
   width: 100%;
   margin-top: 30px;
-  margin-bottom: 10px;
+}
+body .player .progress.mobile {
+  margin-bottom: 30px;
+}
+body .player .progress.desktop {
+  margin-bottom: 20px;
 }
 body .player .progress .progress-bar {
   position: relative;

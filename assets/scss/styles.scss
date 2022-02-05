@@ -201,7 +201,12 @@ body{
             align-items: center;
             width: 100%;
             margin-top: 30px;
-            margin-bottom: 10px;
+            &.mobile{
+                margin-bottom: 30px;
+            }
+            &.desktop{
+                margin-bottom: 20px;
+            }
             .progress-bar {
                 position: relative;
                 width: calc(100% - 100px);
