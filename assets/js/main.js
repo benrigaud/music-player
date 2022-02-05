@@ -91,3 +91,38 @@ buttonPlay.forEach(btn => btn.addEventListener('click', playButtonHandler))
 buttonNext.forEach(btn => btn.addEventListener('click', nextHandler))
 buttonPrev.forEach(btn => btn.addEventListener('click', prevHandler))
 allTracks.forEach(track => track.addEventListener('click', tracklistHandler))
+
+// progress bar
+const theAudio = document.querySelector('audio')
+const start = document.querySelectorAll('.start')
+const end = document.querySelectorAll('.end')
+const progressBar = document.querySelectorAll('.progress-bar')
+const now = document.querySelectorAll('.now')
+
+function conversion (value) {
+    let minute = Math.floor(value / 60)
+    minute = minute.toString().length === 1 ? ('0' + minute) : minute
+    let second = Math.round(value % 60)
+    second = second.toString().length === 1 ? ('0' + second) : second
+    return `${minute}:${second}`
+}
+
+theAudio.onloadedmetadata = function () {
+    end.forEach(e => e.innerHTML = conversion(audio.duration))
+    start.forEach(e => e.innerHTML = conversion(audio.currentTime))
+}
+
+progressBar.forEach(e => e.addEventListener('click', function (event) {
+    let coordStart = this.getBoundingClientRect().left
+    let coordEnd = event.pageX
+    let p = (coordEnd - coordStart) / this.offsetWidth
+    now.style.width = p.toFixed(3) * 100 + '%'
+
+    audio.currentTime = p * audio.duration
+    audio.play()
+}))
+
+setInterval(() => {
+    start.forEach(e => e.innerHTML = conversion(audio.currentTime))
+    now.forEach(e => e.style.width = audio.currentTime / audio.duration.toFixed(3) * 100 + '%')
+}, 1000)

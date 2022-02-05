@@ -188,6 +188,35 @@ body .player .tracklist .tracks .track.active {
 body .player .tracklist .tracks .track.active span {
   font-weight: 400;
 }
+body .player .progress {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+body .player .progress .progress-bar {
+  position: relative;
+  width: calc(100% - 100px);
+  height: 6px;
+  background-color: #D0DCEC;
+  vertical-align: 2px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+body .player .progress .progress-bar .now {
+  position: absolute;
+  left: 0;
+  border-radius: 6px 0 0 6px;
+  display: inline-block;
+  height: 6px;
+  width: 70%;
+  background: #85BDFF;
+}
+body .player .progress .end, body .player .progress .start {
+  font-size: 14px;
+}
 @media screen and (min-width: 992px) {
   body .player {
     display: flex;

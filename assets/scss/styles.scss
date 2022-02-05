@@ -195,6 +195,35 @@ body{
                 }
             }
         }
+        .progress {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            .progress-bar {
+                position: relative;
+                width: calc(100% - 100px);
+                height: 6px;
+                background-color: $gray;
+                vertical-align: 2px;
+                border-radius: 6px;
+                cursor: pointer;
+                .now {
+                    position: absolute;
+                    left: 0;
+                    border-radius: 6px 0 0 6px;
+                    display: inline-block;
+                    height: 6px;
+                    width: 70%;
+                    background: $blue-light;
+                }
+            }
+            .end,.start{
+                font-size: 14px;
+            }
+        }
         @media screen and ( min-width: 992px ) {
             display: flex;
             flex-wrap: wrap;
