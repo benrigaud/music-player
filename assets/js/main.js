@@ -116,7 +116,7 @@ progressBar.forEach(e => e.addEventListener('click', function (event) {
     let coordStart = this.getBoundingClientRect().left
     let coordEnd = event.pageX
     let p = (coordEnd - coordStart) / this.offsetWidth
-    now.style.width = p.toFixed(3) * 100 + '%'
+    now.forEach(e => e.style.width = p.toFixed(3) * 100 + '%')
 
     audio.currentTime = p * audio.duration
     audio.play()
