@@ -1,5 +1,5 @@
 # Vanilla JavaScript Music Player
 
-Practice project, WIP<br>
+WIP<br><br>
 You can view this project here:<br>
 https://benrigaud.github.io/music-player/
